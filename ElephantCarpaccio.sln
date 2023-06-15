@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElephantCarpaccio.Cli", "src\ElephantCarpaccio.Cli\ElephantCarpaccio.Cli.csproj", "{C115138B-4219-497D-8F8E-34553AC2DCF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElephantCarpaccio.UnitTests", "src\ElephantCarpaccio.UnitTests\ElephantCarpaccio.UnitTests.csproj", "{C87DA41D-43A8-468F-A2EA-F245B0FD0A03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C115138B-4219-497D-8F8E-34553AC2DCF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C115138B-4219-497D-8F8E-34553AC2DCF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C115138B-4219-497D-8F8E-34553AC2DCF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C115138B-4219-497D-8F8E-34553AC2DCF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C87DA41D-43A8-468F-A2EA-F245B0FD0A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C87DA41D-43A8-468F-A2EA-F245B0FD0A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C87DA41D-43A8-468F-A2EA-F245B0FD0A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C87DA41D-43A8-468F-A2EA-F245B0FD0A03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
