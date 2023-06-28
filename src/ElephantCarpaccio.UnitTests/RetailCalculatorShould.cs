@@ -23,4 +23,16 @@ public class RetailCalculatorShould
       
       Assert.Equal(5.99m, retailCalculator.PricePerItem);
    }
+
+   [Fact]
+   public void CalculateTotalPriceWithoutTax()
+   {
+      RetailCalculator retailCalculator = new();
+      retailCalculator.SetNumberOfItems(10);
+      retailCalculator.SetPricePerItem(1m);
+
+      var totalPriceExclTax = retailCalculator.CalculateTotalExludingTax();
+      
+      Assert.Equal(10m, totalPriceExclTax);
+   }
 }
