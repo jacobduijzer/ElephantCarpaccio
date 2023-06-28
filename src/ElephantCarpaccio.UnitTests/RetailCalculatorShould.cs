@@ -13,4 +13,14 @@ public class RetailCalculatorShould
       
       Assert.Equal(10, retailCalculator.NumberOfItems);
    }
+
+   [Fact]
+   public void AcceptItemPriceAsParameter()
+   {
+      RetailCalculator retailCalculator = new();
+
+      retailCalculator.SetPricePerItem(5.99f);
+      
+      Assert.Equal(5.99f, retailCalculator.PricePerItem);
+   }
 }
