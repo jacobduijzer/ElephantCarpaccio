@@ -36,7 +36,7 @@ public class RetailCalculatorShould
       retailCalculator.SetNumberOfItems(numberOfItems);
       retailCalculator.SetPricePerItem(pricePerItem);
 
-      var totalPriceExclTax = retailCalculator.CalculateTotalExludingTax();
+      var totalPriceExclTax = retailCalculator.CalculateTotalExcludingTax();
 
       Assert.Equal(expectedTotalPrice, totalPriceExclTax);
    }
