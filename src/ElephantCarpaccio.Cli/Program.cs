@@ -14,4 +14,4 @@ if (!decimal.TryParse(pricePerItemString, out decimal pricePerItem))
 RetailCalculator retailCalculator = new();
 retailCalculator.SetNumberOfItems(numberOfItems);
 retailCalculator.SetPricePerItem(pricePerItem);
-Console.WriteLine($"The total price, ex tax, is: {retailCalculator.CalculateTotalExcludingTax()}");
+Console.WriteLine($"The total price is: {retailCalculator.CalculateTotal()}");

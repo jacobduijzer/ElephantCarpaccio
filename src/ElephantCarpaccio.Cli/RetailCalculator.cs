@@ -2,6 +2,7 @@ namespace ElephantCarpaccio.Cli;
 
 public class RetailCalculator
 {
+    private const decimal _tax = 6.85m;
     public int NumberOfItems { get; private set; }
     
     public decimal PricePerItem { get; private set; }
@@ -12,6 +13,7 @@ public class RetailCalculator
     public void SetPricePerItem(decimal pricePerItem) =>
         PricePerItem = pricePerItem;
 
-    public decimal CalculateTotalExcludingTax() =>
-        NumberOfItems * PricePerItem;
+    //(number of items * price per item) * ((100 + tax value) / 100)
+    public decimal CalculateTotal() =>
+        (NumberOfItems * PricePerItem) * ((100 + _tax) / 100);
 }
