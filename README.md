@@ -19,78 +19,89 @@ Because the original documents might disappear, I've created PDF's out of the or
     I want to see a "Hello, Customer!" message
     So I know my setup is working
 ```
-2. Hard-coded number of items
+2. Number of items as input parameter
 ```text
-    As a user
-    I want to see a hard-coded number of items
-    So I know I can use input for my calculator
+    As a developer
+    I want to be able to provide the calculator with a number of items
+    So I know I can use user input for my calculator
 ```
-3. Item Input
+3. Price per item as input parameter
 ```text
-    As a user 
-    I want to see the number of items I entered
-    So I know my item input is working correctly
+    As a developer
+    I want to be able to provide the calculator with a price per item 
+    So I know I can use user input for my calculator
 ```
-4. Price per Item
-```text
-    As a user
-    I want to see the price per item I entered
-    So I know my price per item input is working correctly
-```
-5. Total price calculation (without tax)
+4. Total price calculation (without tax) with input parameters
 ```text
     As a user
     I want to see the total price (tax excluded)
     By using the following formula: number of items * price per item
     So I know the total price calculation works correctly
 ```
-6. Total price calculation (with fixed tax percentage of 6.85%)
+5. Number of Items as user input
+```text
+    As a user 
+    I want to see my input, the number of items, being used by the calculator
+    So I know my item input is working correctly
+```
+6. Price per Item as user input
+```text
+    As a user
+    I want to see the my input, the price per item, being used by the calculator
+    So I know my price per item input is working correctly
+```
+7. Total price calculation (with fixed tax percentage of 6.85%)
 ```text
     As a user 
     I want to see the total price, calculated with a fixed tax percentage
     By using the following formula: (number of items * price per item) * ((100 + tax value) / 100)
     So I can verify the tax calculation is correct
 ```
-7. 2-Letter state code
+8. Tax percentage as input parameter, used for calculation
+```text
+    As a developer
+    I want to be able to provide the calculator with a tax amount
+    So I know I can use user input for my calculator
+```
+9. 2-Letter state code as input to select tax rate
 ```text
     As a user 
-    I want to see the 2-letter state code I entered
-    So I know my 2-letter state code input is working correctly
+    I want to enter a 2-letter state code and see the corresponding tax rate being used
+    So I can calculate the correct tax for the retail price
 ```
-8. View tax rate table
+10. Calculating a discount when ordering, using multiple discount rates
 ```text
-    As a user 
-    I want to see the table with states and tax rates
-    So I can verify my tax rates are correct
-```
-9. Tax for entered state
-```text
-    As a user
-    I want to see the tax rate for the state I entered
-    So I know that the tax lookup works correctly
-```
-10. Total price calculation including tax
-```text
-    As a user 
-    I want to see the complete calculation including tax
-    So I can use my application to calculate the total order price
-```
-11. Calculating a discount when ordering more than $1000 (fixed discount rate)
-```text
-    As a customer ordering for more than $1000 of items
-    I want a discount of 3% be calculated
+    As a customer ordering 
+    I want a discount, based on the total amount of my order
     So I pay less
 ```
-12. View discount rate table
+11. Creating a menu with options
+```text
+    As a user
+    I want my application to have a menu with options
+    So I can use it for calculations or close the application
+```
+12. View tax rate table
 ```text
     As a user 
-    I want to see the table with discount rates
+    I want to have a menu option to see all tax rates
+    So I can verify my tax rates are correct
+```
+13. View discount rate table
+```text
+    As a user 
+    I want to have a menu option to see all discount rates
     So I can verify that my discount rates are correct
 ```
-13. Total price calculation, with tax and discount
+14. Tax rates from a json file
 ```text
-    As a customer
-    I want to see my total price, regarding discounts and taxes
-    Which is calculated by the following formula: discount price + state tax
-    So I know the final price of my order
+    As a developer 
+    I want to select tax rates from a json file
+    So I can change the rates without changing the application
+```
+15. Discount percentages from a json file
+```text
+    As a developer 
+    I want to select discount percentages from a json file
+    So I can change the discount percentages without changing the application
 ```
