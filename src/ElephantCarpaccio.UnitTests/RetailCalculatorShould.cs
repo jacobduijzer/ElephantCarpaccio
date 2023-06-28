@@ -19,8 +19,8 @@ public class RetailCalculatorShould
    {
       RetailCalculator retailCalculator = new();
 
-      retailCalculator.SetPricePerItem(5.99f);
+      retailCalculator.SetPricePerItem(5.99m);
       
-      Assert.Equal(5.99f, retailCalculator.PricePerItem);
+      Assert.Equal(5.99m, retailCalculator.PricePerItem);
    }
 }
