@@ -1,3 +1,5 @@
+using ElephantCarpaccio.Cli;
+
 namespace ElephantCarpaccio.UnitTests;
 
 public class RetailCalculatorShould
