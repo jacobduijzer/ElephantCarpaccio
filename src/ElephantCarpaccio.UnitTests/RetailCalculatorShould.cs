@@ -26,6 +26,7 @@ public class RetailCalculatorShould
 
    [Theory]
    [InlineData(1000, 1, 1068.5)]
+   [InlineData(12, 12.2, 156.4284)]
    public void CalculateTotalPriceWithFixedTax(int numberOfItems, decimal pricePerItem, decimal expectedTotalPrice)
    {
       RetailCalculator retailCalculator = new();
