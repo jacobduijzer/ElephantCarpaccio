@@ -11,4 +11,7 @@ public class RetailCalculator
 
     public void SetPricePerItem(decimal pricePerItem) =>
         PricePerItem = pricePerItem;
+
+    public decimal CalculateTotalExludingTax() =>
+        NumberOfItems * PricePerItem;
 }
