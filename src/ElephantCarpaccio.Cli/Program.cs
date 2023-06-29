@@ -13,7 +13,8 @@ static bool MainMenu()
     Console.WriteLine("Choose an option:");
     Console.WriteLine("1) Calculate retail price");
     Console.WriteLine("2) Show tax rates");
-    Console.WriteLine("3) Exit");
+    Console.WriteLine("3) Show discount rates");
+    Console.WriteLine("4) Exit");
     Console.Write("\r\nSelect an option: ");
 
     switch (Console.ReadLine())
@@ -24,6 +25,9 @@ static bool MainMenu()
 
         case "2":
             ShowTaxRates();
+            return true;
+        case "3":
+            ShowDiscountRates();
             return true;
 
         default:
@@ -64,6 +68,18 @@ static void ShowTaxRates()
     foreach (var rate in new TaxService().TaxRates)
     {
         Console.WriteLine($"State '{rate.Key}': {rate.Value}%");
+    }
+    Console.WriteLine("Press enter to continue");
+    Console.ReadLine();
+}
+
+
+static void ShowDiscountRates()
+{
+    Console.WriteLine("Discount Rates");
+    foreach (var rate in new DiscountService().DiscountRates)
+    {
+        Console.WriteLine($"Amount larger than'{rate.Key}': {rate.Value}% discount");
     }
     Console.WriteLine("Press enter to continue");
     Console.ReadLine();

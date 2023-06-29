@@ -2,7 +2,7 @@ namespace ElephantCarpaccio.Cli;
 
 public class DiscountService
 {
-    private readonly Dictionary<decimal, int> _discountRates = new()
+    public readonly Dictionary<decimal, int> DiscountRates = new()
     {
         { 1000, 3},
         { 5000, 5},
@@ -12,5 +12,5 @@ public class DiscountService
     };
 
     public decimal GetDiscountRate(decimal totalAmount) =>
-        _discountRates.LastOrDefault(x => totalAmount >= x.Key).Value;
+        DiscountRates.LastOrDefault(x => totalAmount >= x.Key).Value;
 }
