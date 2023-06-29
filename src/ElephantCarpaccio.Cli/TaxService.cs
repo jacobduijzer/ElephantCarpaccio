@@ -2,7 +2,7 @@ namespace ElephantCarpaccio.Cli;
 
 public class TaxService
 {
-    private readonly Dictionary<string, decimal> _taxRates = new()
+    public readonly Dictionary<string, decimal> TaxRates = new()
     {
         {"UT", 6.85m},
         {"NV", 8},
@@ -12,5 +12,5 @@ public class TaxService
     };
 
     public decimal GetPercentageForState(string state) =>
-        _taxRates.TryGetValue(state, out decimal taxPercentage) ? taxPercentage : 0;
+        TaxRates.TryGetValue(state, out decimal taxPercentage) ? taxPercentage : 0;
 }

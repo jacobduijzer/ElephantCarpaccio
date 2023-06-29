@@ -12,15 +12,20 @@ static bool MainMenu()
     Console.WriteLine("Hello, Customer!");
     Console.WriteLine("Choose an option:");
     Console.WriteLine("1) Calculate retail price");
-    Console.WriteLine("2) Exit");
+    Console.WriteLine("2) Show tax rates");
+    Console.WriteLine("3) Exit");
     Console.Write("\r\nSelect an option: ");
- 
+
     switch (Console.ReadLine())
     {
         case "1":
             CalculateRetailPrice();
             return true;
-        
+
+        case "2":
+            ShowTaxRates();
+            return true;
+
         default:
             return false;
     }
@@ -49,6 +54,17 @@ static void CalculateRetailPrice()
     retailCalculator.SetTaxPercentage(taxPercentage);
 
     Console.WriteLine($"The total price is: {retailCalculator.CalculateTotal()}");
+    Console.WriteLine("Press enter to continue");
+    Console.ReadLine();
+}
+
+static void ShowTaxRates()
+{
+    Console.WriteLine("Tax Rates");
+    foreach (var rate in new TaxService().TaxRates)
+    {
+        Console.WriteLine($"State '{rate.Key}': {rate.Value}%");
+    }
     Console.WriteLine("Press enter to continue");
     Console.ReadLine();
 }
