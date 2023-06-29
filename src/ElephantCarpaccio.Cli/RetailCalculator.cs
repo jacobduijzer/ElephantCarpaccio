@@ -13,7 +13,6 @@ public class RetailCalculator
     public void SetPricePerItem(decimal pricePerItem) =>
         PricePerItem = pricePerItem;
 
-    //(number of items * price per item) * ((100 + tax value) / 100)
     public decimal CalculateTotal() =>
         (NumberOfItems * PricePerItem) * ((100 + _tax) / 100);
 }
