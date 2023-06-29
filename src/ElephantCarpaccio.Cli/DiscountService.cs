@@ -8,15 +8,9 @@ public class DiscountService
         { 5000, 5},
         { 7000, 7},
         { 10000, 10},
-        { 50000, 55},
+        { 50000, 15},
     };
 
-    public int GetDiscountRate(decimal totalAmount)
-    {
-        var discount = _discountRates.FirstOrDefault(x => x.Key <= totalAmount).Value;
-        if (discount != 0)
-            return discount;
-
-        return 0;
-    }
+    public int GetDiscountRate(decimal totalAmount) =>
+        _discountRates.LastOrDefault(x => totalAmount >= x.Key).Value;
 }
