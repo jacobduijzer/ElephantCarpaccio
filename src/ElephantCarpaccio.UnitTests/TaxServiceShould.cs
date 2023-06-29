@@ -1,3 +1,5 @@
+using ElephantCarpaccio.Cli;
+
 namespace ElephantCarpaccio.UnitTests;
 
 public class TaxServiceShould
@@ -9,6 +11,6 @@ public class TaxServiceShould
 
         var taxPercentage = taxService.GetPercentageForState("TX");
 
-        Assert.Equal(5.55m, taxPercentage); 
+        Assert.Equal(6.25m, taxPercentage); 
     }
 }
