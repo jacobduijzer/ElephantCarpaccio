@@ -35,7 +35,7 @@ public class RetailCalculatorShould
    }
    
    [Theory]
-   [InlineData(1000, 1, 6.85, 1068.5)]
+   [InlineData(1000, 1, 6.85, 1036.445)]
    [InlineData(12, 12.2, 5.5, 154.4520)]
    public void CalculateTotalPriceWithTax(int numberOfItems, decimal pricePerItem, decimal taxPercentage, decimal expectedTotalPrice)
    {
