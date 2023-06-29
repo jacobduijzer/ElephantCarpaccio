@@ -36,6 +36,7 @@ public class RetailCalculatorShould
    
    [Theory]
    [InlineData(12, 12.2, 5.5, 154.4520)]
+   [InlineData(12, 12.2, 6.25, 155.55000)]
    [InlineData(1000, 1, 6.85, 1036.445)]
    [InlineData(1000, 10, 6.85, 9616.50000)]
    [InlineData(1000, 100, 6.85, 90822.500000)]
