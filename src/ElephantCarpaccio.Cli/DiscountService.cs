@@ -11,6 +11,6 @@ public class DiscountService
         { 50000, 15},
     };
 
-    public int GetDiscountRate(decimal totalAmount) =>
+    public decimal GetDiscountRate(decimal totalAmount) =>
         _discountRates.LastOrDefault(x => totalAmount >= x.Key).Value;
 }

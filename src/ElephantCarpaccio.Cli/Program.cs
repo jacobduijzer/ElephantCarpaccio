@@ -16,7 +16,7 @@ var stateForTax = Console.ReadLine();
 var taxPercentage = new TaxService().GetPercentageForState(stateForTax);
 
 Console.WriteLine($"Tax percentage for state '{stateForTax}': {taxPercentage}%");
-RetailCalculator retailCalculator = new();
+RetailCalculator retailCalculator = new(new DiscountService());
 retailCalculator.SetNumberOfItems(numberOfItems);
 retailCalculator.SetPricePerItem(pricePerItem);
 retailCalculator.SetTaxPercentage(taxPercentage);

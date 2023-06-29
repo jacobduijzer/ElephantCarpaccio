@@ -7,7 +7,7 @@ public class RetailCalculatorShould
    [Fact]
    public void AcceptNumberOfItemsAsParameter()
    {
-      RetailCalculator retailCalculator = new();
+      RetailCalculator retailCalculator = new(new DiscountService());
 
       retailCalculator.SetNumberOfItems(10);
       
@@ -17,7 +17,7 @@ public class RetailCalculatorShould
    [Fact]
    public void AcceptItemPriceAsParameter()
    {
-      RetailCalculator retailCalculator = new();
+      RetailCalculator retailCalculator = new(new DiscountService());
 
       retailCalculator.SetPricePerItem(5.99m);
       
@@ -27,7 +27,7 @@ public class RetailCalculatorShould
    [Fact]
    public void AcceptTaxPercentageAsParameter()
    {
-      RetailCalculator retailCalculator = new();
+      RetailCalculator retailCalculator = new(new DiscountService());
 
       retailCalculator.SetTaxPercentage(5.5m);
       
@@ -39,7 +39,7 @@ public class RetailCalculatorShould
    [InlineData(12, 12.2, 5.5, 154.4520)]
    public void CalculateTotalPriceWithTax(int numberOfItems, decimal pricePerItem, decimal taxPercentage, decimal expectedTotalPrice)
    {
-      RetailCalculator retailCalculator = new();
+      RetailCalculator retailCalculator = new(new DiscountService());
       retailCalculator.SetNumberOfItems(numberOfItems);
       retailCalculator.SetPricePerItem(pricePerItem);
       retailCalculator.SetTaxPercentage(taxPercentage);

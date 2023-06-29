@@ -2,10 +2,14 @@ namespace ElephantCarpaccio.Cli;
 
 public class RetailCalculator
 {
+    private readonly DiscountService _discountService;
     public int NumberOfItems { get; private set; }
     public decimal PricePerItem { get; private set; }
     public decimal TaxPercentage { get; private set; }
     
+    public RetailCalculator(DiscountService discountService) =>
+        _discountService = discountService;
+
     public void SetNumberOfItems(int numberOfItems) =>
         NumberOfItems = numberOfItems;
 
@@ -14,7 +18,14 @@ public class RetailCalculator
     
     public void SetTaxPercentage(decimal taxPercentage) =>
         TaxPercentage = taxPercentage;
-    
-    public decimal CalculateTotal() =>
-        (NumberOfItems * PricePerItem) * ((100 + TaxPercentage) / 100);
+
+    public decimal CalculateTotal()
+    {
+        var totalPrice = NumberOfItems * PricePerItem;
+        var discount = _discountService.GetDiscountRate(totalPrice);
+        var totalPriceWithDiscount = totalPrice * ((100 - discount) / 100);
+
+        return totalPriceWithDiscount * ((100 + TaxPercentage) / 100);
+    }
+        
 }
