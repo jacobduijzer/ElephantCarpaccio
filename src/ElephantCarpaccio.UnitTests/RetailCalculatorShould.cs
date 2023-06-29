@@ -24,27 +24,28 @@ public class RetailCalculatorShould
       Assert.Equal(5.99m, retailCalculator.PricePerItem);
    }
 
-   [Theory]
-   [InlineData(1000, 1, 1068.5)]
-   [InlineData(12, 12.2, 156.4284)]
-   public void CalculateTotalPriceWithFixedTax(int numberOfItems, decimal pricePerItem, decimal expectedTotalPrice)
-   {
-      RetailCalculator retailCalculator = new();
-      retailCalculator.SetNumberOfItems(numberOfItems);
-      retailCalculator.SetPricePerItem(pricePerItem);
-
-      var totalPriceExclTax = retailCalculator.CalculateTotal();
-
-      Assert.Equal(expectedTotalPrice, totalPriceExclTax);
-   }
-
    [Fact]
    public void AcceptTaxPercentageAsParameter()
    {
       RetailCalculator retailCalculator = new();
 
-      retailCalculator.SetTaxPercentage(5.5);
+      retailCalculator.SetTaxPercentage(5.5m);
       
-      Assert.Equal(5.5, retailCalculator.TaxPercentage);
+      Assert.Equal(5.5m, retailCalculator.TaxPercentage);
+   }
+   
+   [Theory]
+   [InlineData(1000, 1, 6.85, 1068.5)]
+   [InlineData(12, 12.2, 5.5, 154.4520)]
+   public void CalculateTotalPriceWithTax(int numberOfItems, decimal pricePerItem, decimal taxPercentage, decimal expectedTotalPrice)
+   {
+      RetailCalculator retailCalculator = new();
+      retailCalculator.SetNumberOfItems(numberOfItems);
+      retailCalculator.SetPricePerItem(pricePerItem);
+      retailCalculator.SetTaxPercentage(taxPercentage);
+
+      var totalPriceExclTax = retailCalculator.CalculateTotal();
+
+      Assert.Equal(expectedTotalPrice, totalPriceExclTax);
    }
 }
