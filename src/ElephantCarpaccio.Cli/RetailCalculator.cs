@@ -22,8 +22,8 @@ public class RetailCalculator
     public decimal CalculateTotal()
     {
         var totalPrice = NumberOfItems * PricePerItem;
-        var discount = _discountService.GetDiscountRate(totalPrice);
-        var totalPriceWithDiscount = totalPrice * ((100 - discount) / 100);
+        var discountRate = _discountService.GetDiscountRate(totalPrice);
+        var totalPriceWithDiscount = totalPrice * ((100 - discountRate) / 100);
 
         return totalPriceWithDiscount * ((100 + TaxPercentage) / 100);
     }
