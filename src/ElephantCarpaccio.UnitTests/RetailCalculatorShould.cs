@@ -37,4 +37,14 @@ public class RetailCalculatorShould
 
       Assert.Equal(expectedTotalPrice, totalPriceExclTax);
    }
+
+   [Fact]
+   public void AcceptTaxPercentageAsParameter()
+   {
+      RetailCalculator retailCalculator = new();
+
+      retailCalculator.SetTaxPercentage(5.5);
+      
+      Assert.Equal(5.5, retailCalculator.TaxPercentage);
+   }
 }
